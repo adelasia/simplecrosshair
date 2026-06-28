@@ -1,14 +1,16 @@
 # simplecrosshair
 
-Lightweight Windows crosshair overlay. System tray only — no main window, no extra dependencies.
+Lightweight Windows crosshair overlay. System tray only, no main window, no extra dependencies.
 
-Built with **Python + Win32 API (ctypes)** only. No PyQt, Tkinter, or Pygame.
+Built with **Python + Win32 API (ctypes)** only.
+
+![In-game crosshair](screenshots/ingame.png)
 
 ## Download
 
 Download the latest **`simplecrosshair.exe`** from the [**Releases**](https://github.com/adelasia/simplecrosshair/releases/latest) page.
 
-No install required — run the `.exe` and look for the tray icon. Windows may show a SmartScreen warning for unsigned apps; choose **More info → Run anyway** if you trust the source.
+No install required, run the `.exe` and look for the tray icon.
 
 ## Features
 
@@ -20,27 +22,28 @@ No install required — run the `.exe` and look for the tray icon. Windows may s
   - **Ring** — on/off, diameter, thickness, color
   - **Cross** — on/off, gap, thickness, length, color
 - Settings saved to `%APPDATA%\simplecrosshair\config.json`
-- Low CPU and memory usage (~0% CPU when idle)
+- Low CPU and memory usage (~0% CPU)
+
+![Tray menu](screenshots/tray.png)
 
 ## Compatibility
 
-Works on any application that's not fullscreen exclusive. You must use **windowed** or **borderless windowed** mode on your game. This was an intentional design choice, as rendering into a fullscreen-exclusive game is not anti-cheat-compatible.
+Works on any application that's not fullscreen exclusive. You must use **windowed** or **borderless windowed** mode on your game. This is intentional, as rendering into a fullscreen might not be anti cheat compatible.
 
 ## Usage
 
-1. Run `simplecrosshair.exe` or `python main.py`
+1. Run `simplecrosshair.exe`
 2. Find the green crosshair icon in the system tray
 3. Press **F2** (or your configured hotkey) to show/hide the crosshair
 4. Right-click the tray icon to change settings
 
-> The crosshair starts **hidden** on launch. The on/off state is not saved between sessions.
+> The crosshair is **hidden** on launch. The on/off state is not saved between sessions.
 
 ### Start with Windows
 
 To run simplecrosshair automatically when Windows starts:
 
-1. Right-click `simplecrosshair.exe` and choose **Create shortcut**
-2. Move the shortcut into the Startup folder:
+Move `simplecrosshair.exe` into the Startup folder:
 
 ```
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
@@ -48,19 +51,11 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
 
 Paste that path into File Explorer's address bar, or press **Win + R**, type `shell:common startup`, and press Enter.
 
-> This folder applies to **all users** and may require administrator permission to copy files into. For **your account only**, use `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup` instead (Win + R → `shell:startup`).
-
 The app will start in the tray on login. The crosshair itself still starts hidden until you press your hotkey.
-
-## Screenshots
-
-![Tray menu](screenshots/tray.png)
-![In-game crosshair](screenshots/ingame.png)
 
 ## Requirements
 
-- Windows 10/11
-- Python 3.11+ (only if running from source)
+- Windows
 
 ## Run from source
 
